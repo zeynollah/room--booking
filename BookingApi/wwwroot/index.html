@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bokningssystem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <p class="eyebrow">Bokningssystem</p>
+            <h1>Boka ett rum</h1>
+            <p class="lead">Välj rum och tid. Ett rum kan inte vara bokat av två personer samtidigt.</p>
+        </header>
+
+        <main class="layout">
+            <section class="card">
+                <h2>Ny bokning</h2>
+                <form id="bookingForm">
+                    <label for="roomId">Rum</label>
+                    <select id="roomId" required>
+                        <option value="">Hämtar rum…</option>
+                    </select>
+
+                    <label for="customerName">Namn</label>
+                    <input id="customerName" type="text" placeholder="För- och efternamn" required>
+
+                    <label for="startTime">Start</label>
+                    <input id="startTime" type="datetime-local" required>
+
+                    <label for="endTime">Slut</label>
+                    <input id="endTime" type="datetime-local" required>
+
+                    <p id="message" role="status"></p>
+                    <button type="submit">Boka rum</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <div class="section-head">
+                    <h2>Bokade tider</h2>
+                    <button type="button" id="refreshBtn" class="secondary">Uppdatera</button>
+                </div>
+                <ul id="bookingList"></ul>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
